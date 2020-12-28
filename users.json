@@ -1,0 +1,37 @@
+{
+    "user1": {
+        "email": "mohamed",
+        "password": "123123",
+        "id": 1
+    },
+    "user2": {
+        "email": "aly@gmail.com",
+        "password": "qwerty",
+        "id": 2
+    },
+    "user3": {
+        "email": "lolo",
+        "password": "asdfgh",
+        "id": 3
+    },
+    "user4": {
+        "email": "  ",
+        "password": "123456",
+        "id": 4
+    },
+    "user5": {
+        "email": "moh@gmail.com",
+        "password": "123456",
+        "id": 5
+    },
+    "user6": {
+        "email": "sss@gmail.com",
+        "password": "poiuyt",
+        "id": 6
+    },
+    "user7": {
+        "email": "koko@gmail.com",
+        "password": "cderfv",
+        "id": 7
+    }
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="game-title col-md-10" style="margin:auto;">
+                <p id="server-test1" style="font-weight: 700;"></p>
+                <p id="server-test2" style="font-weight: 700;"></p>
+                <h1>X O Game</h1>
+                <div class="buttons">
+                    <!-- <button id='one' class="but">Single Player</button> -->
+                    <button id='two' class="but">MultiPlayer</button>
+                    <button id='startNow' class="but">Start Now</button>
+                </div>
+                <div class="logs">
+                    <h2 class="state"></h2>
+                    <h2 class="result"></h2>
+                    <!-- <button id='play-again' class="play-again but">Play Again</button> -->
+                </div>
+            </div>
+            <div class="container1">
+
+                <div class="row_XO">
+                    <div class="cell c1" id='c1'></div>
+                    <div class="cell c2" id='c2'></div>
+                    <div class="cell c3" id='c3'></div>
+                </div>
+                <div class="row_XO">
+                    <div class="cell c4" id='c4'></div>
+                    <div class="cell c5" id='c5'></div>
+                    <div class="cell c6" id='c6'></div>
+                </div>
+                <div class="row_XO">
+                    <div class="cell c7" id='c7'></div>
+                    <div class="cell c8" id='c8'></div>
+                    <div class="cell c9" id='c9'></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1">
+            <div class="col-xs-12 col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading top-bar">
+                        <div class="col-md-6 col-xs-8 p-3">
+                            <h3 class="panel-title p-0 m-0"><strong>Chat</strong></h3>
+                        </div>
+                        <!-- <div class="col-md-4 col-xs-4" style="text-align: right;">
+                            <a href="#"><span id="minim_chat_window"
+                                    class="glyphicon glyphicon-minus icon_minim"></span></a>
+                            <a href="#"><span class="glyphicon glyphicon-remove icon_close"
+                                    data-id="chat_window_1"></span></a>
+                        </div> -->
+                    </div>
+                    <div class="panel-body msg_container_base" id="panel-body">
+                        <div class="row msg_container base_sent">
+                            <div class="col-md-10 col-xs-10">
+                                <div class="messages msg_sent">
+                                    <p>that mongodb thing looks good, huh? tiny master db, and huge document store</p>
+                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-xs-2 avatar">
+                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
+                                    class=" img-responsive ">
+                            </div>
+                        </div>
+                        <div class="row msg_container base_receive">
+                            <div class="col-md-2 col-xs-2 avatar">
+                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
+                                    class=" img-responsive ">
+                            </div>
+                            <div class="col-md-10 col-xs-10">
+                                <div class="messages msg_receive">
+                                    <p>that mongodb thing looks good, huh? tiny master db, and huge document store</p>
+                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row msg_container base_receive">
+                            <div class="col-md-2 col-xs-2 avatar">
+                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
+                                    class=" img-responsive ">
+                            </div>
+                            <div class="col-md-10 col-xs-10">
+                                <div class="messages msg_receive">
+                                    <p>that mongodb thing looks good, huh? tiny master db, and huge document store</p>
+                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+                        <form class="input-group p-2">
+                            <input id=" btn-input " type="text " class="chat_input form-control input-sm  "
+                                placeholder="Write your message here... " />
+                            <span class="input-group-btn ">
+                                <button class="btn btn-primary btn-m ml-2" id="btn-chat" onclick="send()">Send</button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group dropup ">
+                <button type="button " class="btn btn-default dropdown-toggle " data-toggle="dropdown ">
+                    <span class="glyphicon glyphicon-cog "></span>
+                    <span class="sr-only ">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu " role="menu ">
+                    <li><a href="# " id="new_chat "><span class="glyphicon glyphicon-plus "></span> Novo</a></li>
+                    <li><a href="# "><span class="glyphicon glyphicon-list "></span> Ver outras</a></li>
+                    <li><a href="# "><span class="glyphicon glyphicon-remove "></span> Fechar Tudo</a></li>
+                    <li class="divider "></li>
+                    <li><a href="# "><span class="glyphicon glyphicon-eye-close "></span> Invisivel</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"
+            integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ=="
+            crossorigin="anonymous"></script>
+
+        <script src="js/gameScript.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            $('.top-bar').click(function () {
+                $('.msg_container_base').toggle(function () {
+                    $(".msg_container_base").css('max-height', '0px');
+                }, function () {
+                    $(".msg_container_base").css('max-height', '500px');
+                });
+            });
+        </script>
+</body>
+
+
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        box-sizing: border-box;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+        background-color: rgb(219, 245, 245);
+    }
+
+    .game-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+    }
+
+    .buttons {
+        padding-top: 20px;
+    }
+
+    .but {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    #one {
+        margin-right: 10px;
+    }
+
+    #two {
+        margin-left: 10px;
+    }
+
+    .play-again {
+        margin-left: 30px;
+    }
+
+    /* .logs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        padding-top: 20px;
+    } */
+
+    .container1 {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate3d(-50%, -50%, 0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 300px;
+        width: 300px;
+        border: 1px solid grey;
+        margin: 5px;
+    }
+
+    .row_XO {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .cell {
+        text-align: center;
+        height: 100%;
+        width: 33.3333333%;
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid grey;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fa-circle,
+    .fa-times {
+        font-size: 4rem;
+    }
+</style>
